@@ -5,4 +5,10 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        
+        index = dict()
+
+        for i, num in enumerate(nums):
+            if (target - num) in index:
+                return [i, index[target - num]]
+            index[num] = i
+        return []
